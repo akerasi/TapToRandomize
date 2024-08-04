@@ -12,7 +12,6 @@ shift_old_seeds(){
         SeedInCurrent=$(ls -1 $BaseRandoDir/current | wc -l)
         if (( SeedInCurrent > 0 )); then
                 for filename in $BaseRandoDir/current/*; do
-                        echo "$filename"
                         mv "$filename" $BaseRandoDir/archive
                 done
                 cd $BaseRandoDir/archive
