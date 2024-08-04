@@ -1,5 +1,5 @@
 #!/bin/bash
-BaseGameDir=/media/fat/games
+BaseGameDir=/media/fat/cifs/games
 BaseSnesDir=SNES
 BaseNesDir=NES
 SolarJetmanRandoDir=SolarJetmanRando
