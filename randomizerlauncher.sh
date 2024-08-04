@@ -18,7 +18,6 @@ shift_old_seeds(){
 }
 case $1 in
         solarjetman)
-                ec
                 if [ ! -e .venvsj/bin/activate ]; then
                     python -m venv .venvsj
                 fi
