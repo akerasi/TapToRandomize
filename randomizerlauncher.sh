@@ -28,7 +28,7 @@ case $1 in
                 fi
                 source .venvsj/bin/activate
                 pip install sj-rando
-                sj-rando --rompath "${SolarJetmanRom}"
+                sj-rando -i -p --mode normal --rompath "${SolarJetmanRom}"
                 deactivate
                 mv *.nes "$BaseRandoDir/current"
         ;;
