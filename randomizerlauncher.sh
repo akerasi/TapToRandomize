@@ -3,7 +3,7 @@ BaseGameDir=/media/fat/games
 BaseSnesDir=SNES
 BaseNesDir=NES
 SolarJetmanRandoDir=SolarJetmanRando
-SolarJetmanRom="$BaseGameDir/$BaseNesDir/EverDrive N8 & PowePak v6.2/1 US - R-Z/Solar Jetman - Hunt for the Golden Warpship (USA).nes"
+SolarJetmanRom="$BaseGameDir/$BaseNesDir/EverDrive N8 & PowerPak v6.2/1 US - R-Z/Solar Jetman - Hunt for the Golden Warpship (USA).nes"
 BaseRandoDir=/tmp/rando/
 KeepSeeds=5
 shift_old_seeds(){
