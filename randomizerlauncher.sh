@@ -118,7 +118,7 @@ case $1 in
                 BaseRandoDir=$BaseGameDir/$BaseGBADir/$MMBN3RandoDir
                 shift_old_seeds
                 ArchipelagoPlayerDir=$BaseYamlDir/$MMBN3PlayerDir
-                ArchipelagoFileEnding='.sfc'
+                ArchipelagoFileEnding='.gba'
                 archipelago_generate 
         ;;
 esac
