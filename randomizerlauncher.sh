@@ -21,6 +21,8 @@ LOZRandoDir=LOZRando
 LOZPlayerDir=loz
 L2RandoDir=L2Rando
 L2PlayerDir=lufia2
+MMBN3RandoDir=MMBN3Rando
+MMBN3PlayerDir=mmbn3
 BaseRandoDir=/tmp/rando/
 KeepSeeds=5
 
@@ -109,6 +111,13 @@ case $1 in
                 BaseRandoDir=$BaseGameDir/$BaseSnesDir/$L2RandoDir
                 shift_old_seeds
                 ArchipelagoPlayerDir=$BaseYamlDir/$L2PlayerDir
+                ArchipelagoFileEnding='.sfc'
+                archipelago_generate 
+        ;;
+        mmbn3)
+                BaseRandoDir=$BaseGameDir/$BaseGBADir/$MMBN3RandoDir
+                shift_old_seeds
+                ArchipelagoPlayerDir=$BaseYamlDir/$MMBN3PlayerDir
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
         ;;

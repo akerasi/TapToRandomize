@@ -8,3 +8,4 @@ MegaMan Battle Network 3:
   include_jobs: 'true'
   trade_quest_hinting: full
   start_inventory: {}
+  rom_path: '/media/fat/cifs/games/GBA/mmbn3.gba'

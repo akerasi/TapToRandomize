@@ -158,7 +158,7 @@ mlss_options:
   rom_start: true
 mmbn3_options:
   # File name of the MMBN3 Blue US rom
-  rom_file: "/media/fat/cifs/games/GBA/randoroms/mmbn3blue.gba"
+  rom_file: "/media/fat/cifs/games/GBA/randoroms/mmbn3.gba"
   rom_start: true
 oot_options:
   # File name of the OoT v1.0 ROM
