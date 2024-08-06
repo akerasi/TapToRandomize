@@ -40,6 +40,8 @@ SMRandoDir=SMRando
 SMPlayerDir=supermetroid
 SMW2RandoDir=YIRando
 SMW2PlayerDir=yoshi
+YGORandoDir=YGORando
+YGOPlayerDir=yugioh
 KeepSeeds=5
 
 #Handle ini file if it exists
@@ -194,5 +196,12 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$SMW2PlayerDir
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
-        ;;        
+        ;;  
+        yugioh06)
+                BaseRandoDir=$BaseGameDir/$BaseGBADir/$YGORandoDir
+                shift_old_seeds
+                ArchipelagoPlayerDir=$BaseYamlDir/$YGOPlayerDir
+                ArchipelagoFileEnding='.gba'
+                archipelago_generate 
+        ;;      
 esac

@@ -24,3 +24,4 @@ Yu-Gi-Oh! 2006:
   campaign_opponents_shuffle: 'false'
   ocg_arts: 'false'
   start_inventory: {}
+  rom_path: '/media/fat/cifs/games/GBA/randoroms/yugioh06.gba'
