@@ -38,6 +38,8 @@ SOEPlayerDir=soe
 BaseRandoDir=/tmp/rando/
 SMRandoDir=SMRando
 SMPlayerDir=supermetroid
+SMW2RandoDir=YIRando
+SMW2PlayerDir=yoshi
 KeepSeeds=5
 
 #Handle ini file if it exists
@@ -186,4 +188,11 @@ case $1 in
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
         ;;
+        yoshi)
+                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMW2RandoDir
+                shift_old_seeds
+                ArchipelagoPlayerDir=$BaseYamlDir/$SMW2PlayerDir
+                ArchipelagoFileEnding='.sfc'
+                archipelago_generate 
+        ;;        
 esac

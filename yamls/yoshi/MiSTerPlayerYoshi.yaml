@@ -32,3 +32,4 @@ Yoshi's Island:
   trap_percent: '10'
   death_link: 'false'
   start_inventory: {}
+  rom_path: '/media/fat/games/cifs/SNES/randoroms/smw2.smc'
