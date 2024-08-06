@@ -19,6 +19,8 @@ KDL3RandoDir=KDL3Rando
 KDL3PlayerDir=kdl3
 LOZRandoDir=LOZRando
 LOZPlayerDir=loz
+L2RandoDir=L2Rando
+L2PlayerDir=lufia2
 BaseRandoDir=/tmp/rando/
 KeepSeeds=5
 
@@ -101,6 +103,13 @@ case $1 in
                 shift_old_seeds
                 ArchipelagoPlayerDir=$BaseYamlDir/$LOZPlayerDir
                 ArchipelagoFileEnding='.nes'
+                archipelago_generate 
+        ;;
+        l2)
+                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$L2RandoDir
+                shift_old_seeds
+                ArchipelagoPlayerDir=$BaseYamlDir/$L2PlayerDir
+                ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
         ;;
 esac

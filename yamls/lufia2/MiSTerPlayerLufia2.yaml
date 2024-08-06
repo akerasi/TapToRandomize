@@ -35,3 +35,4 @@ Lufia II Ancient Cave:
   shuffle_party_members: 'false'
   custom_item_pool: {}
   start_inventory: {}
+  rom_path: '/media/fat/cifs/games/SNES/randoroms/l2.smc'
