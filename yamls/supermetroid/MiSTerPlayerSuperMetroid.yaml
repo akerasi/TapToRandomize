@@ -49,3 +49,4 @@ Super Metroid:
   objective: kill all G4
   relaxed_round_robin_cf: 'false'
   start_inventory: {}
+  rom_path: '/media/fat/cifs/games/SNES/randoroms/sm.smc'

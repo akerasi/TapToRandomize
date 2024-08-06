@@ -36,6 +36,8 @@ SMZ3PlayerDir=smz3
 SOERandoDir=SOERando
 SOEPlayerDir=soe
 BaseRandoDir=/tmp/rando/
+SMRandoDir=SMRando
+SMPlayerDir=supermetroid
 KeepSeeds=5
 
 #Handle ini file if it exists
@@ -174,6 +176,13 @@ case $1 in
                 BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SOERandoDir
                 shift_old_seeds
                 ArchipelagoPlayerDir=$BaseYamlDir/$SOEPlayerDir
+                ArchipelagoFileEnding='.sfc'
+                archipelago_generate 
+        ;;
+        sm)
+                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMRandoDir
+                shift_old_seeds
+                ArchipelagoPlayerDir=$BaseYamlDir/$SMPlayerDir
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
         ;;
