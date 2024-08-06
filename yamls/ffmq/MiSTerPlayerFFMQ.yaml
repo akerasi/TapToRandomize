@@ -36,3 +36,4 @@ Final Fantasy Mystic Quest:
   battlefields_battles_quantities: ten
   start_inventory: {}
   starting_weapon: random
+  rom_path: '/media/fat/cifs/games/SNES/randoroms/ffmq.smc'
