@@ -27,6 +27,8 @@ MMBN3PlayerDir=mmbn3
 #PokeEPlayerDir=pokemonemerald
 #OOTRandoDir=OOTRando
 #OOTPlayerDir=oot
+PokeRBRandoDir=PokeRBRando
+PokeRBPlayerDir=pokemonrb
 BaseRandoDir=/tmp/rando/
 KeepSeeds=5
 
@@ -140,4 +142,11 @@ case $1 in
 #                ArchipelagoFileEnding='.gba'
 #                archipelago_generate 
 #        ;;
+        pokerb)
+                BaseRandoDir=$BaseGameDir/$BaseGameboyDir/$PokeRBRandoDir
+                shift_old_seeds
+                ArchipelagoPlayerDir=$BaseYamlDir/$PokeRBPlayerDir
+                ArchipelagoFileEnding='.gb'
+                archipelago_generate 
+        ;;        
 esac

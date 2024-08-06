@@ -102,3 +102,5 @@ Pokemon Red and Blue:
   death_link: 'false'
   start_inventory: {}
   game_version: random
+  red_rom_path: '/media/cifs/games/GAMEBOY/randoroms/pokered.gb'
+  blue_rom_path: '/media/cifs/games/GAMEBOY/randoroms/pokeblue.gb'
