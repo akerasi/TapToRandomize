@@ -43,7 +43,7 @@ archipelago_generate(){
         archipelago-0.5.0-MiSTerFPGA/ArchipelagoGenerate --player_files_path $ArchipelagoPlayerDir
         unzip taptorandomizetmp/*.zip
         archipelago-0.5.0-MiSTerFPGA/ArchipelagoPatch AP_*P1*
-        cp taptorandomizetmp/*.$ArchipelagoFileEnding $BaseRandoDir/current
+        cp taptorandomizetmp/*$ArchipelagoFileEnding $BaseRandoDir/current
         rm taptorandomizetmp/*
 }
 case $1 in
