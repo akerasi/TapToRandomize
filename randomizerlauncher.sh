@@ -148,5 +148,5 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$PokeRBPlayerDir
                 ArchipelagoFileEnding='.gb'
                 archipelago_generate 
-        ;;        
+        ;;    
 esac
