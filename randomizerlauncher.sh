@@ -78,7 +78,7 @@ case $1 in
                 archipelago_generate 
         ;;
         cv64)
-                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$CV64RandoDir
+                BaseRandoDir=$BaseGameDir/$BaseN64Dir/$CV64RandoDir
                 shift_old_seeds
                 ArchipelagoPlayerDir=$BaseYamlDir/$CV64PlayerDir
                 ArchipelagoFileEnding='.z64'
