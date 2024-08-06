@@ -33,6 +33,8 @@ SMWRandoDir=SMWRando
 SMWPlayerDir=smw
 SMZ3RandoDir=SMZ3Rando
 SMZ3PlayerDir=smz3
+SOERandoDir=SOERando
+SOEPlayerDir=soe
 BaseRandoDir=/tmp/rando/
 KeepSeeds=5
 
@@ -165,6 +167,13 @@ case $1 in
                 BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMZ3RandoDir
                 shift_old_seeds
                 ArchipelagoPlayerDir=$BaseYamlDir/$SMZ3PlayerDir
+                ArchipelagoFileEnding='.sfc'
+                archipelago_generate 
+        ;;
+        soe)
+                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SOERandoDir
+                shift_old_seeds
+                ArchipelagoPlayerDir=$BaseYamlDir/$SOEPlayerDir
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
         ;;

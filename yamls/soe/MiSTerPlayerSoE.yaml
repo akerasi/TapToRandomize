@@ -33,3 +33,4 @@ Secret of Evermore:
   trap_chance_hud: '20'
   trap_chance_ohko: '20'
   start_inventory: {}
+  rom_path: '/media/fat/cifs/games/SNES/randoroms/soe.smc'
