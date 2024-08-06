@@ -23,6 +23,8 @@ L2RandoDir=L2Rando
 L2PlayerDir=lufia2
 MMBN3RandoDir=MMBN3Rando
 MMBN3PlayerDir=mmbn3
+OOTRandoDir=OOTRando
+OOTPlayerDir=oot
 BaseRandoDir=/tmp/rando/
 KeepSeeds=5
 
@@ -119,6 +121,13 @@ case $1 in
                 shift_old_seeds
                 ArchipelagoPlayerDir=$BaseYamlDir/$MMBN3PlayerDir
                 ArchipelagoFileEnding='.gba'
+                archipelago_generate 
+        ;;
+        oot)
+                BaseRandoDir=$BaseGameDir/$BaseN64Dir/$OOTRandoDir
+                shift_old_seeds
+                ArchipelagoPlayerDir=$BaseYamlDir/$OOTPlayerDir
+                ArchipelagoFileEnding='.z64'
                 archipelago_generate 
         ;;
 esac

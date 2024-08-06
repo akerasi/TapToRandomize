@@ -142,3 +142,4 @@ Ocarina of Time:
   sfx_ocarina: ocarina
   death_link: 'false'
   start_inventory: {}
+  rom_path: '/media/fat/cifs/games/N64/randoroms/oot.n64'
