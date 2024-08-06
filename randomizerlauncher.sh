@@ -86,11 +86,4 @@ case $1 in
                 ArchipelagoFileEnding='.z64'
                 archipelago_generate 
         ;;
-        ffmq)
-                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$FFMQRandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$FFMQPlayerDir
-                ArchipelagoFileEnding='.sfc'
-                archipelago_generate 
-        ;;
 esac
