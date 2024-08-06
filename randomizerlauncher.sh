@@ -207,10 +207,10 @@ case $1 in
                 ArchipelagoFileEnding='.gba'
                 archipelago_generate 
         ;;
-        zillion)
-                BaseRandoDir=$BaseGameDir/$BaseSMSDir/$ZillionRandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$ZillionPlayerDir
-                ArchipelagoFileEnding='.sms'
-                archipelago_generate                      
+#        zillion)
+#                BaseRandoDir=$BaseGameDir/$BaseSMSDir/$ZillionRandoDir
+#                shift_old_seeds
+#                ArchipelagoPlayerDir=$BaseYamlDir/$ZillionPlayerDir
+#                ArchipelagoFileEnding='.sms'
+#                archipelago_generate                      
 esac

@@ -14,7 +14,7 @@ Zillion:
   early_scope: 'false'
   skill: '2'
   starting_cards: '2'
-  room_gen: 'false'
+  room_gen: true
   id_card_count: '42'
   bread_count: '50'
   opa_opa_count: '26'
@@ -25,4 +25,3 @@ Zillion:
   start_inventory: {}
   start_char: random
   rom_path: '/media/fat/cifs/games/SMS/randoroms/zillion.sms'
-  
