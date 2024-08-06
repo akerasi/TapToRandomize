@@ -7,6 +7,7 @@ BaseGameboyDir=GAMEBOY
 BaseGBADir=GBA
 BaseN64Dir=N64
 BaseGenesisDir=Genesis
+BaseSMSDir=SMS
 SolarJetmanRandoDir=SolarJetmanRando
 SolarJetmanRom='/media/fat/cifs/games/NES/randoroms/Solar Jetman - Hunt for the Golden Warpship (USA).nes'
 ALTTPRandoDir=ALTTPRando
@@ -42,6 +43,8 @@ SMW2RandoDir=YIRando
 SMW2PlayerDir=yoshi
 YGORandoDir=YGORando
 YGOPlayerDir=yugioh
+ZillionRandoDir=ZillionRANDO
+ZillionPlayerDir=zillion
 KeepSeeds=5
 
 #Handle ini file if it exists
@@ -203,5 +206,11 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$YGOPlayerDir
                 ArchipelagoFileEnding='.gba'
                 archipelago_generate 
-        ;;      
+        ;;
+        zillion)
+                BaseRandoDir=$BaseGameDir/$BaseSMSDir/$ZillionRandoDir
+                shift_old_seeds
+                ArchipelagoPlayerDir=$BaseYamlDir/$ZillionPlayerDir
+                ArchipelagoFileEnding='.sms'
+                archipelago_generate                      
 esac
