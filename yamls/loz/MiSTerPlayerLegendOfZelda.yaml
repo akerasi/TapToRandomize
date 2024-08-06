@@ -8,3 +8,4 @@ The Legend of Zelda:
   TriforceLocations: vanilla
   StartingPosition: safe
   start_inventory: {}
+  rom_path: '/media/fat/cifs/games/NES/randoroms/tloz.nes'

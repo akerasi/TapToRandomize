@@ -6,6 +6,7 @@ BaseNesDir=NES
 BaseGameboyDir=GAMEBOY
 BaseGBADir=GBA
 BaseN64Dir=N64
+BaseGenesisDir=Genesis
 SolarJetmanRandoDir=SolarJetmanRando
 SolarJetmanRom='/media/fat/cifs/games/NES/randoroms/Solar Jetman - Hunt for the Golden Warpship (USA).nes'
 ALTTPRandoDir=ALTTPRando
@@ -16,6 +17,8 @@ CV64RandoDir=CV64Rando
 CV64PlayerDir=cv64
 KDL3RandoDir=KDL3Rando
 KDL3PlayerDir=kdl3
+LOZRandoDir=LOZRando
+LOZPlayerDir=loz
 BaseRandoDir=/tmp/rando/
 KeepSeeds=5
 
@@ -91,6 +94,13 @@ case $1 in
                 shift_old_seeds
                 ArchipelagoPlayerDir=$BaseYamlDir/$KDL3PlayerDir
                 ArchipelagoFileEnding='.sfc'
+                archipelago_generate 
+        ;;
+        loz)
+                BaseRandoDir=$BaseGameDir/$BaseNesDir/$LOZRandoDir
+                shift_old_seeds
+                ArchipelagoPlayerDir=$BaseYamlDir/$LOZPlayerDir
+                ArchipelagoFileEnding='.nes'
                 archipelago_generate 
         ;;
 esac
