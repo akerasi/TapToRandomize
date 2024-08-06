@@ -116,7 +116,7 @@ adventure_options:
   display_msgs: true
 cv64_options:
   # File name of the CV64 US 1.0 rom
-  rom_file: "Castlevania (USA).z64"
+  rom_file: "/media/fat/cifs/games/N64/randoroms/cv64.z64"
 dkc3_options:
   # File name of the DKC3 US rom
   rom_file: "/media/fat/cifs/games/SNES/randoroms/dkc3.smc"

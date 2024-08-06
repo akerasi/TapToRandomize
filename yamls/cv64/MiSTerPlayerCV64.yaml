@@ -57,3 +57,4 @@ Castlevania 64:
   start_inventory: {}
   start_inventory_from_pool: {}
   starting_stage: random
+  rom_path: '/media/fat/cifs/games/N64/randoroms/cv64.z64'

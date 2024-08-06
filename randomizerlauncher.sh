@@ -12,6 +12,8 @@ ALTTPRandoDir=ALTTPRando
 ALTTPPlayerDir=alttp
 DKC3RandoDir=DKC3Rando
 DKC3PlayerDir=dkc3
+CV64RandoDir=CV64Rando
+CV64PlayerDir=cv64
 BaseRandoDir=/tmp/rando/
 KeepSeeds=5
 
@@ -75,4 +77,12 @@ case $1 in
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
         ;;
+        cv64)
+                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$CV64RandoDir
+                shift_old_seeds
+                ArchipelagoPlayerDir=$BaseYamlDir/$CV64PlayerDir
+                ArchipelagoFileEnding='.z64'
+                archipelago_generate 
+        ;;
+
 esac
