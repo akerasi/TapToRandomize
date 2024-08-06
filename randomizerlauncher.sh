@@ -42,7 +42,7 @@ archipelago_generate(){
         cp $BaseYamlDir/host.yaml archipelago-0.5.0-MiSTerFPGA/
         archipelago-0.5.0-MiSTerFPGA/ArchipelagoGenerate --player_files_path $ArchipelagoPlayerDir
         unzip taptorandomizetmp/*.zip -d taptorandomizetmp/
-        archipelago-0.5.0-MiSTerFPGA/ArchipelagoPatch AP_*P1*.ap*
+        archipelago-0.5.0-MiSTerFPGA/ArchipelagoPatch taptorandomizetmp/AP_*P1*.ap*
         cp taptorandomizetmp/AP*$ArchipelagoFileEnding $BaseRandoDir/current
         rm taptorandomizetmp/*
 }
