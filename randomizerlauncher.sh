@@ -29,6 +29,8 @@ MMBN3PlayerDir=mmbn3
 #OOTPlayerDir=oot
 PokeRBRandoDir=PokeRBRando
 PokeRBPlayerDir=pokemonrb
+SMWRandoDir=SMWRando
+SMWPlayerDir=smw
 BaseRandoDir=/tmp/rando/
 KeepSeeds=5
 
@@ -149,4 +151,11 @@ case $1 in
                 ArchipelagoFileEnding='.gb'
                 archipelago_generate 
         ;;    
+        smw)
+                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMWRandoDir
+                shift_old_seeds
+                ArchipelagoPlayerDir=$BaseYamlDir/$SMWPlayerDir
+                ArchipelagoFileEnding='.sfc'
+                archipelago_generate 
+        ;;
 esac
