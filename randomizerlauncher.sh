@@ -38,6 +38,7 @@ shift_old_seeds(){
         fi;
 }
 archipelago_generate(){
+        mkdir -p taptorandomizetmp
         cp $BaseYamlDir/host.yaml archipelago-0.5.0-MiSTerFPGA/
         archipelago-0.5.0-MiSTerFPGA/ArchipelagoGenerate --player_files_path $ArchipelagoPlayerDir
         unzip taptorandomizetmp/*.zip
