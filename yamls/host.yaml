@@ -133,7 +133,7 @@ ffr_options:
   display_msgs: true
 kdl3_options:
   # File name of the KDL3 JP or EN rom
-  rom_file: "/media/fat/cifs/games/SNES/kdl3.smc"
+  rom_file: "/media/fat/cifs/games/SNES/randoroms/kdl3.smc"
 ladx_options:
   # File name of the Link's Awakening DX rom
   rom_file: "/media/fat/cifs/games/GAMEBOY/randoroms/ladx.gbc"
