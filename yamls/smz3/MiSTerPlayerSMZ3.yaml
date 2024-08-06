@@ -18,3 +18,5 @@ SMZ3:
   quick_swap: 'false'
   energy_beep: 'true'
   start_inventory: {}
+  sm_rom_path: '/media/fat/cifs/games/SNES/randoroms/sm.smc'
+  z3_rom_path: '/media/fat/cifs/games/SNES/randoroms/alttp.smc'

@@ -31,6 +31,8 @@ PokeRBRandoDir=PokeRBRando
 PokeRBPlayerDir=pokemonrb
 SMWRandoDir=SMWRando
 SMWPlayerDir=smw
+SMZ3RandoDir=SMZ3Rando
+SMZ3PlayerDir=smz3
 BaseRandoDir=/tmp/rando/
 KeepSeeds=5
 
@@ -60,12 +62,13 @@ shift_old_seeds(){
 }
 archipelago_generate(){
         mkdir -p taptorandomizetmp
+        rm -Rf taptorandomizetmp/*
         cp $BaseYamlDir/host.yaml archipelago-0.5.0-MiSTerFPGA/
         archipelago-0.5.0-MiSTerFPGA/ArchipelagoGenerate --player_files_path $ArchipelagoPlayerDir
         unzip taptorandomizetmp/*.zip -d taptorandomizetmp/
         archipelago-0.5.0-MiSTerFPGA/ArchipelagoPatch taptorandomizetmp/AP_*P1*.ap*
         cp taptorandomizetmp/AP*$ArchipelagoFileEnding $BaseRandoDir/current
-        rm taptorandomizetmp/*
+        rm -Rf taptorandomizetmp/*
 }
 case $1 in
         solarjetman)
@@ -155,6 +158,13 @@ case $1 in
                 BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMWRandoDir
                 shift_old_seeds
                 ArchipelagoPlayerDir=$BaseYamlDir/$SMWPlayerDir
+                ArchipelagoFileEnding='.sfc'
+                archipelago_generate 
+        ;;
+        smz3)
+                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMZ3RandoDir
+                shift_old_seeds
+                ArchipelagoPlayerDir=$BaseYamlDir/$SMZ3PlayerDir
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
         ;;
