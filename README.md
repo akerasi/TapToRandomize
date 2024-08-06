@@ -14,18 +14,31 @@ This is EARLY Alpha at this point; it should progress as things go.
 
 Supported randomizers currently:
 solarjetman (NES Solar Jetman)
+
 alttp (SNES A Link To The Past)
+
 dkc3 (SNES Donkey Kong Country 3)
+
 cv64 (N64 Castlevania64)
+
 kdl3 (SNES Kirby's Dream Land 3)
+
 loz (NES The Legend of Zelda)
+
 l2 (SNES Lufia 2 Ancient Caves)
+
 mmbn3 (GBA Mega Man Battle Network 3)
+
 pokerb (GB Pokemon Red and Blue)
+
 smz3 (SNES Super Metroid and A Link to the Past Combo Randomizer)
+
 soe (SNES Secret of Evermore)
+
 sm (SNES Super Metroid)
+
 yoshi (SNES Yoshi's Island)
+
 yugioh06 (GBA Yu Gi Oh Ultimate Master 2006)
 
 Version: 0.1.1
