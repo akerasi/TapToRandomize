@@ -23,6 +23,8 @@ L2RandoDir=L2Rando
 L2PlayerDir=lufia2
 MMBN3RandoDir=MMBN3Rando
 MMBN3PlayerDir=mmbn3
+PokeERandoDir=PokemonEmeraldRando
+PokeEPlayerDir=pokemonemerald
 #OOTRandoDir=OOTRando
 #OOTPlayerDir=oot
 BaseRandoDir=/tmp/rando/
@@ -131,4 +133,11 @@ case $1 in
 #                ArchipelagoFileEnding='.z64'
 #                archipelago_generate 
 #        ;;
+        pokee)
+                BaseRandoDir=$BaseGameDir/$BaseGBADir/$PokeERandoDir
+                shift_old_seeds
+                ArchipelagoPlayerDir=$BaseYamlDir/$PokeEPlayerDir
+                ArchipelagoFileEnding='.gba'
+                archipelago_generate 
+        ;;
 esac

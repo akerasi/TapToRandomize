@@ -78,3 +78,4 @@ Pokemon Emerald:
   enable_wonder_trading: 'true'
   easter_egg: EMERALD SECRET
   start_inventory: {}
+  rom_path: '/media/cifs/games/GBA/randoroms/pokee.gba'

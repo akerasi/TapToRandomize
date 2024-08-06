@@ -169,7 +169,7 @@ oot_options:
   rom_start: true
 pokemon_emerald_settings:
   # File name of your English Pokemon Emerald ROM
-  rom_file: "/media/fat/cifs/games/GBA/randoroms/pokeemer.gba"
+  rom_file: "/media/fat/cifs/games/GBA/randoroms/pokee.gba"
 pokemon_rb_options:
   # File names of the Pokemon Red and Blue roms
   red_rom_file: "/media/fat/cifs/games/GAMEBOY/randoroms/pokered.gb"
