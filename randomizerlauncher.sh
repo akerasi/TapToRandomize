@@ -1,5 +1,6 @@
 #!/bin/bash
 BaseGameDir=/media/fat/cifs/games
+BaseYamlDir=/media/fat/Scripts/yamls
 BaseSnesDir=SNES
 BaseNesDir=NES
 BaseGameboyDir=GAMEBOY
@@ -8,7 +9,7 @@ BaseN64Dir=N64
 SolarJetmanRandoDir=SolarJetmanRando
 SolarJetmanRom='/media/fat/cifs/games/NES/randoroms/Solar Jetman - Hunt for the Golden Warpship (USA).nes'
 ALTTPRandoDir=ALTTPRando
-ALTTPPlayerDir=yamls/alttp
+ALTTPPlayerDir=$BaseYamlDir/alttp
 BaseRandoDir=/tmp/rando/
 KeepSeeds=5
 
@@ -37,6 +38,7 @@ shift_old_seeds(){
         fi;
 }
 archipelago_generate(){
+        cp $BaseYamlDir/host.yaml archipelago-0.5.0-MiSTerFPGA/
         archipelago-0.5.0-MiSTerFPGA/ArchipelagoGenerate --player_files_path $ArchipelagoPlayerDir
         unzip taptorandomizetmp/*.zip
         archipelago-0.5.0-MiSTerFPGA/ArchipelagoPatch AP_*P1*
