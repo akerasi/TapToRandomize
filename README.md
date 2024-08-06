@@ -1,4 +1,4 @@
-TapToRandomizer is a simple script to automize randomizer usage on MiSTerFPGA, best utilized alongside TapTo (https://github.com/TapToCommunity/tapto)
+TapToRandomize is a simple script to automize randomizer usage on MiSTerFPGA, best utilized alongside TapTo (https://github.com/TapToCommunity/tapto)
 
 Usage: randomizerlauncher.sh randomizername
 
