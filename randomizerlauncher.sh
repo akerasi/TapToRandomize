@@ -48,11 +48,7 @@ ZillionPlayerDir=zillion
 KeepSeeds=5
 
 #Handle ini file if it exists
-if [ "$ORIGINAL_SCRIPT_PATH" == "bash" ]
-then
-	ORIGINAL_SCRIPT_PATH=$(ps | grep "^ *$PPID " | grep -o "[^ ]*$")
-fi
-INI_PATH=${ORIGINAL_SCRIPT_PATH%.*}.ini
+INI_PATH=/media/fat/Scripts/randomizerlauncher.ini
 if [ -f $INI_PATH ]
 then
 source <(grep = $INI_PATH|tr -d '\r')
