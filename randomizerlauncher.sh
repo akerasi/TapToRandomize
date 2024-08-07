@@ -48,6 +48,7 @@ YGORandoDir=YGORando
 YGOPlayerDir=yugioh
 ZillionRandoDir=ZillionRando
 ZillionPlayerDir=zillion
+SystemForAutolaunch=none
 KeepSeeds=5
 
 #Handle ini file if it exists
@@ -92,6 +93,7 @@ case $1 in
                 sj-rando -i -p --mode normal --rompath "${SolarJetmanRom}"
                 deactivate
                 mv *.nes "$BaseRandoDir/current"
+                SystemForAutolaunch="NES"
         ;;
         alttp)
                 BaseRandoDir=$BaseGameDir/$BaseSnesDir/$ALTTPRandoDir
@@ -99,6 +101,7 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$ALTTPPlayerDir
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
+                SystemForAutolaunch="SNES"
         ;;
         dkc3)
                 BaseRandoDir=$BaseGameDir/$BaseSnesDir/$DKC3RandoDir
@@ -106,6 +109,7 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$DKC3PlayerDir
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
+                SystemForAutolaunch="SNES"
         ;;
         cv64)
                 BaseRandoDir=$BaseGameDir/$BaseN64Dir/$CV64RandoDir
@@ -113,6 +117,7 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$CV64PlayerDir
                 ArchipelagoFileEnding='.z64'
                 archipelago_generate 
+                SystemForAutolaunch="N64"
         ;;
         kdl3)
                 BaseRandoDir=$BaseGameDir/$BaseSnesDir/$KDL3RandoDir
@@ -120,6 +125,7 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$KDL3PlayerDir
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
+                SystemForAutolaunch="SNES"
         ;;
         loz)
                 BaseRandoDir=$BaseGameDir/$BaseNesDir/$LOZRandoDir
@@ -127,6 +133,7 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$LOZPlayerDir
                 ArchipelagoFileEnding='.nes'
                 archipelago_generate 
+                SystemForAutolaunch="NES"
         ;;
         l2)
                 BaseRandoDir=$BaseGameDir/$BaseSnesDir/$L2RandoDir
@@ -134,6 +141,7 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$L2PlayerDir
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
+                SystemForAutolaunch="SNES"
         ;;
         mmbn3)
                 BaseRandoDir=$BaseGameDir/$BaseGBADir/$MMBN3RandoDir
@@ -141,6 +149,7 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$MMBN3PlayerDir
                 ArchipelagoFileEnding='.gba'
                 archipelago_generate 
+                SystemForAutolaunch="GBA"
         ;;
 #        Commented out as it doesn't currently run on MiSTer; left for future fix
 #        oot)
@@ -148,7 +157,8 @@ case $1 in
 #                shift_old_seeds
 #                ArchipelagoPlayerDir=$BaseYamlDir/$OOTPlayerDir
 #                ArchipelagoFileEnding='.z64'
-#                archipelago_generate 
+#                archipelago_generate
+#                SystemForAutolaunch="N64"
 #        ;;
 #        pokee)
 #                BaseRandoDir=$BaseGameDir/$BaseGBADir/$PokeERandoDir
@@ -156,6 +166,7 @@ case $1 in
 #                ArchipelagoPlayerDir=$BaseYamlDir/$PokeEPlayerDir
 #                ArchipelagoFileEnding='.gba'
 #                archipelago_generate 
+#                SystemForAutolaunch="GBA"
 #        ;;
         pokerb)
                 BaseRandoDir=$BaseGameDir/$BaseGameboyDir/$PokeRBRandoDir
@@ -163,6 +174,7 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$PokeRBPlayerDir
                 ArchipelagoFileEnding='.gb'
                 archipelago_generate 
+                SystemForAutolaunch="GAMEBOY"
         ;;    
         smw)
                 BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMWRandoDir
@@ -170,6 +182,7 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$SMWPlayerDir
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
+                SystemForAutolaunch="SNES"
         ;;
         smz3)
                 BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMZ3RandoDir
@@ -177,6 +190,7 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$SMZ3PlayerDir
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
+                SystemForAutolaunch="SNES"
         ;;
         soe)
                 BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SOERandoDir
@@ -184,6 +198,7 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$SOEPlayerDir
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
+                SystemForAutolaunch="SNES"
         ;;
         sm)
                 BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMRandoDir
@@ -191,6 +206,7 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$SMPlayerDir
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
+                SystemForAutolaunch="SNES"
         ;;
         yoshi)
                 BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMW2RandoDir
@@ -198,6 +214,7 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$SMW2PlayerDir
                 ArchipelagoFileEnding='.sfc'
                 archipelago_generate 
+                SystemForAutolaunch="SNES"
         ;;  
         yugioh06)
                 BaseRandoDir=$BaseGameDir/$BaseGBADir/$YGORandoDir
@@ -205,11 +222,16 @@ case $1 in
                 ArchipelagoPlayerDir=$BaseYamlDir/$YGOPlayerDir
                 ArchipelagoFileEnding='.gba'
                 archipelago_generate 
+                SystemForAutolaunch="GBA"
         ;;
         zillion)
                 BaseRandoDir=$BaseGameDir/$BaseSMSDir/$ZillionRandoDir
                 shift_old_seeds
                 ArchipelagoPlayerDir=$BaseYamlDir/$ZillionPlayerDir
                 ArchipelagoFileEnding='.sms'
-                archipelago_generate                      
+                archipelago_generate 
+                SystemForAutolaunch="SMS"                     
 esac
+if [ "$2" == "autoload" ]; then
+        $RandomizerBasedir/mbc load_rom $SystemForAutolaunch $BaseRandoDir/current/*
+fi
