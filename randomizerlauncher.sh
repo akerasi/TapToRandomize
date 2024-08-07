@@ -43,7 +43,7 @@ SMW2RandoDir=YIRando
 SMW2PlayerDir=yoshi
 YGORandoDir=YGORando
 YGOPlayerDir=yugioh
-ZillionRandoDir=ZillionRANDO
+ZillionRandoDir=ZillionRando
 ZillionPlayerDir=zillion
 KeepSeeds=5
 
