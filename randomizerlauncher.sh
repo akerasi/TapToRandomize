@@ -51,9 +51,9 @@ KeepSeeds=5
 INI_PATH=/media/fat/Scripts/randomizerlauncher.ini
 if [ -f $INI_PATH ]
 then
-source <(grep = $INI_PATH|tr -d '\r')
+        source <(grep = $INI_PATH|tr -d '\r')
 fi
-
+python /media/fat/scripts/randomizers/yamlupdater.py
 shift_old_seeds(){
         mkdir -p $BaseRandoDir/current
         mkdir -p $BaseRandoDir/archive
