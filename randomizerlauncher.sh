@@ -1,6 +1,7 @@
 #!/bin/bash
+RandomizerBasedir=/media/fat/Scripts/randomizers
 BaseGameDir=/media/fat/cifs/games
-BaseYamlDir=/media/fat/Scripts/yamls
+BaseYamlDir=$RandomizerBasedir/yamls
 BaseSnesDir=SNES
 BaseNesDir=NES
 BaseGameboyDir=GAMEBOY
@@ -8,7 +9,8 @@ BaseGBADir=GBA
 BaseN64Dir=N64
 BaseGenesisDir=Genesis
 BaseSMSDir=SMS
-TmpDir=/media/fat/Scripts/randomizers/$TmpDir
+TmpDir=$RandomizerBasedir/taptorandomizetmp
+ArchipelagoDir=$RandomizerBasedir/archipelago-0.5.0-MiSTerFPGA
 SolarJetmanRandoDir=SolarJetmanRando
 SolarJetmanRom='/media/fat/cifs/games/NES/randoroms/Solar Jetman - Hunt for the Golden Warpship (USA).nes'
 ALTTPRandoDir=ALTTPRando
@@ -54,7 +56,7 @@ if [ -f $INI_PATH ]
 then
         source <(grep = $INI_PATH|tr -d '\r')
 fi
-python /media/fat/scripts/randomizers/yamlupdater.py
+python $RandomizerBasedir/yamlupdater.py
 shift_old_seeds(){
         mkdir -p $BaseRandoDir/current
         mkdir -p $BaseRandoDir/archive
@@ -71,10 +73,10 @@ shift_old_seeds(){
 archipelago_generate(){
         mkdir -p $TmpDir
         rm -Rf $TmpDir/*
-        cp $BaseYamlDir/host.yaml archipelago-0.5.0-MiSTerFPGA/
-        archipelago-0.5.0-MiSTerFPGA/ArchipelagoGenerate --player_files_path $ArchipelagoPlayerDir
+        cp $BaseYamlDir/host.yaml $ArchipelagoDir/
+        $ArchipelagoDir/ArchipelagoGenerate --player_files_path $ArchipelagoPlayerDir
         unzip $TmpDir/*.zip -d $TmpDir/
-        archipelago-0.5.0-MiSTerFPGA/ArchipelagoPatch $TmpDir/AP_*P1*.ap*
+        $ArchipelagoDir/ArchipelagoPatch $TmpDir/AP_*P1*.ap*
         cp $TmpDir/AP*$ArchipelagoFileEnding $BaseRandoDir/current
         rm -Rf $TmpDir/*
 }
