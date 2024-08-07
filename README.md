@@ -12,6 +12,8 @@ A default ini file is included. You'll almost certainly need to edit it.
 
 Each Archipelago-based randomizer (all of them but Solar Jetman right now) uses a yaml file, located in yamls, for some of its configs. There is a rewriter for these files, at randomizerlauncheryamls.ini, which is a Windows-style ini file rather than a flat Unix one. Sections do matter when editing it. What's in the .ini file will overwrite whatever is in the yamls.You will almost certainly need to edit the rom_path entries in the ini file. I don't recommend editing the .yaml files directly as the .ini will overwrite them, but if you want to, comment out the sections in the ini. Also don't forget to edit host.yaml if you're doing this; the .ini file takes care of that quietly for you, currently.
 
+Weird config note: for Zillion specifically, your ROM MUST be named as Zillion (UE) [!].sms . It can live in any directory, but the filename MUST match that exactly. This is inherited from Archipelago, which inherited it from zilliandomizer, so nothing I can do to change it unless I want to fix it in zilliandomizer, and that's likely beyond my scope... for now. No other randomizers currently have a restriction like this.
+
 This is EARLY Alpha at this point; it should progress as things go.
 
 Supported randomizers currently:
@@ -48,5 +50,14 @@ yoshi (SNES Yoshi's Island)
 
 yugioh06 (GBA Yu Gi Oh Ultimate Master 2006)
 
-Version: 0.1.2
+zillion (SMS Zillion)
+
+Version: 0.1.3
 Author: akerasi (Allen Tipper)
+
+CHANGELOG:
+0.1.3: Added Zillion support, refactored directory structure so everything lives under one directory, randomizers, other than the main script and its two ini files.
+
+0.1.2: Added YAML rewriter to handle Archipelago config YAMLs in a saner manner.
+
+0.1.1: Initial release.

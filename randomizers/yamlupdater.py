@@ -34,6 +34,7 @@ def set_host(config):
     doc["tloz_options"]["rom_file"] = config["loz-a-yaml"]["rom_path"]
     doc["yoshisisland_options"]["rom_file"] = config["smw2-a-yaml"]["rom_path"]
     doc["yugioh06_settings"]["rom_file"] = config["ygo-a-yaml"]["rom_path"]
+    doc["zillion_options"]["rom_file"] = config["zillion-a-yaml"]["rom_path"]
     with open(config["basedirs"]["HostYamlPath"], 'w') as f:
         yaml.dump(doc, f, default_flow_style=False)
 
