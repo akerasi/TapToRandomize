@@ -8,12 +8,19 @@ Upon tapping that card, after a wait (note some waits can be sizeable, SMZ3 can 
 
 RandoDir for each randomizer is defined in the script or in a .ini file. It's set to sane defaults (at least for people who use a cifs drive like me; if your stuff is on an SD card, remove the cifs from all the configs)
 
-Each Archipelago-based randomizer (all of them but Solar Jetman right now) uses a yaml file, located in yamls, for some of its configs. I plan to make a method for .ini to rewrite the yamls for you, but haven't done that yet. Also important is yamls/host.yaml which has some configs for every Archipelago randomizer. Again, I plan implementing a rewriter for these files, flattening it all into a single, simple .ini file, at some point.
+A default ini file is included. You'll almost certainly need to edit it.
+
+Each Archipelago-based randomizer (all of them but Solar Jetman right now) uses a yaml file, located in yamls, for some of its configs. There is a rewriter for these files, at randomizerlauncheryamls.ini, which is a Windows-style ini file rather than a flat Unix one. Sections do matter when editing it. What's in the .ini file will overwrite whatever is in the yamls.You will almost certainly need to edit the rom_path entries in the ini file. I don't recommend editing the .yaml files directly as the .ini will overwrite them, but if you want to, comment out the sections in the ini. Also don't forget to edit host.yaml if you're doing this; the .ini file takes care of that quietly for you, currently.
 
 This is EARLY Alpha at this point; it should progress as things go.
 
 Supported randomizers currently:
+
+(from akerasi https://github.com/akerasi/SJ-rando)
+
 solarjetman (NES Solar Jetman)
+
+(from Archipelago https://github.com/ArchipelagoMW/Archipelago)
 
 alttp (SNES A Link To The Past)
 
@@ -41,5 +48,5 @@ yoshi (SNES Yoshi's Island)
 
 yugioh06 (GBA Yu Gi Oh Ultimate Master 2006)
 
-Version: 0.1.1
+Version: 0.1.2
 Author: akerasi (Allen Tipper)

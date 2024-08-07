@@ -8,6 +8,7 @@ BaseGBADir=GBA
 BaseN64Dir=N64
 BaseGenesisDir=Genesis
 BaseSMSDir=SMS
+TmpDir=/media/fat/Scripts/randomizers/$TmpDir
 SolarJetmanRandoDir=SolarJetmanRando
 SolarJetmanRom='/media/fat/cifs/games/NES/randoroms/Solar Jetman - Hunt for the Golden Warpship (USA).nes'
 ALTTPRandoDir=ALTTPRando
@@ -68,14 +69,14 @@ shift_old_seeds(){
         fi;
 }
 archipelago_generate(){
-        mkdir -p taptorandomizetmp
-        rm -Rf taptorandomizetmp/*
+        mkdir -p $TmpDir
+        rm -Rf $TmpDir/*
         cp $BaseYamlDir/host.yaml archipelago-0.5.0-MiSTerFPGA/
         archipelago-0.5.0-MiSTerFPGA/ArchipelagoGenerate --player_files_path $ArchipelagoPlayerDir
-        unzip taptorandomizetmp/*.zip -d taptorandomizetmp/
-        archipelago-0.5.0-MiSTerFPGA/ArchipelagoPatch taptorandomizetmp/AP_*P1*.ap*
-        cp taptorandomizetmp/AP*$ArchipelagoFileEnding $BaseRandoDir/current
-        rm -Rf taptorandomizetmp/*
+        unzip $TmpDir/*.zip -d $TmpDir/
+        archipelago-0.5.0-MiSTerFPGA/ArchipelagoPatch $TmpDir/AP_*P1*.ap*
+        cp $TmpDir/AP*$ArchipelagoFileEnding $BaseRandoDir/current
+        rm -Rf $TmpDir/*
 }
 case $1 in
         solarjetman)
