@@ -55,7 +55,7 @@ fi
 INI_PATH=${ORIGINAL_SCRIPT_PATH%.*}.ini
 if [ -f $INI_PATH ]
 then
-	source < grep = $INI_PATH
+source <(grep = $INI_PATH|tr -d '\r')
 fi
 
 shift_old_seeds(){
