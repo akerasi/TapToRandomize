@@ -63,3 +63,17 @@ CHANGELOG:
 0.1.2: Added YAML rewriter to handle Archipelago config YAMLs in a saner manner.
 
 0.1.1: Initial release.
+
+ACKNOWLEDGEMENTS
+
+The Archipelago project, https://github.com/ArchipelagoMW/Archipelago , from which we take many randomizers.
+
+The TapTo Project, https://github.com/TapToCommunity/tapto , from which I was inspired to make this, and gave me an initial way to autolaunch roms. This project is much better utilized with TapTo than without, even though it works without it now.
+
+MiSTer Batch Control, https://github.com/pocomane/MiSTer_Batch_Control , which we use to make autolaunch work.
+
+The BIG List of Video Game Randomizers, https://randomizers.debigare.com/ , from which I've been sourcing most of the randomizers I've been considering for inclusion.
+
+Niamek, for the original version of the Solar Jetman randomizer which I've forked and continued at https://github.com/akerasi/SJ-rando
+
+And last but not least, the MiSTer FPGA project: https://github.com/MiSTer-devel/Wiki_MiSTer/wiki
