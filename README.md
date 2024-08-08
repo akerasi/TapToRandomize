@@ -56,10 +56,11 @@ dq3 (SNES Dragon Quest 3 Heavenly Flight (works with English patch or JP rom))
 
 cotm (GBA Castlevania Circle of the Moon (calm-palm, preliminary, only default options))
 
-Version: 0.1.5
+Version: 0.1.6
 Author: akerasi (Allen Tipper)
 
 CHANGELOG:
+
 0.1.6: Added Circle of the Moon https://github.com/calm-palm/cotm-randomizer/
 
 0.1.5: Added Dragon Quest 3 Heavenly Flight https://github.com/cleartonic/dq3hf
