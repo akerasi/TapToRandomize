@@ -57,7 +57,7 @@ if [ -f $INI_PATH ]
 then
         source <(grep = $INI_PATH|tr -d '\r')
 fi
-python $RandomizerBasedir/yamlupdater.py
+
 shift_old_seeds(){
         mkdir -p $BaseRandoDir/current
         mkdir -p $BaseRandoDir/archive
@@ -72,6 +72,7 @@ shift_old_seeds(){
         fi;
 }
 archipelago_generate(){
+        python $RandomizerBasedir/yamlupdater.py
         mkdir -p $TmpDir
         rm -Rf $TmpDir/*
         cp $BaseYamlDir/host.yaml $ArchipelagoDir/
