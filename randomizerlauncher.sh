@@ -237,7 +237,13 @@ dq3(){
         shift_old_seeds
         mkdir -p $RandomizerBasedir/dq3hf/dev/
         echo "$DQ3RomPath" > $RandomizerBasedir/dq3hf/dev/path.txt
+        cd $RandomizerBasedir/dq3hf
         python $RandomizerBasedir/dq3hf/randomizer.py
+        cp $DQ3RomPath $BaseRandoDir/current/$RANDOM.sfc
+        $RandomizerBasedir/dq3hf/asar/asar --fix-checksum=off --no-title-check "$RandomizerBasedir/dq3hf/asar/patch.asm" "$BaseRandoDir/current/*.sfc"
+        rm $RandomizerBasedir/dq3hf/asar/patch_r.asm
+        cd /media/fat/Scripts/
+        SystemForAutoLaunch="SNES"
 }
 call_menu(){
 
@@ -310,7 +316,7 @@ case $1 in
         yoshi) yoshi ;;  
         yugioh06) yugioh06 ;;
         zillion) zillion ;;
-        dq3) dq3
+        dq3) dq3 ;;
         *) call_menu ;;
         #No valid argument entered, start up the menu if we can
 esac
