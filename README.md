@@ -4,7 +4,7 @@ Usage: randomizerlauncher.sh randomizername
 
 In TapTo, make a card with **mister.script:randomizerlauncher.sh randomizername autolaunch?hidden=true
 
-Upon tapping that card, after a wait (note some waits can be sizeable, SMZ3 can take up to 4 minutes to launch!) your randomized ROM will start up. You get a freshly randomized ROM any time you tap the card; to save a session for later, open the ROM in the RandoDir/current directory via the normal MiSTerFPGA menus, or make a card with just the launch command above to launch whatever your current seed is without making a new one.
+Upon tapping that card, after a wait (note some waits can be sizeable, SMZ3 can take up to 4 minutes to launch!) your randomized ROM will start up. You get a freshly randomized ROM any time you tap the card; to save a session for later, open the ROM in the RandoDir/current directory via the normal MiSTerFPGA menus, or make a card with a launch command targeting your RandoDir/current directory (I suggest having this card premade if you're in the habit of playing a single seed over multiple sessions).
 
 RandoDir for each randomizer is defined in the script or in a .ini file. It's set to sane defaults (at least for people who use a cifs drive like me; if your stuff is on an SD card, remove the cifs from all the configs)
 
