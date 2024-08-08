@@ -50,6 +50,8 @@ DQ3RandoDir=DQ3Rando
 DQ3RomPath='/media/fat/cifs/games/SNES/randoroms/dq3.smc'
 ZillionRandoDir=ZillionRando
 ZillionPlayerDir=zillion
+COTMRandoDir=COTMRando
+COTMRomPath='/media/fat/cifs/games/GBA/randoroms/cotm.gba'
 SystemForAutolaunch=none
 KeepSeeds=5
 
@@ -247,6 +249,19 @@ dq3(){
         cd /media/fat/Scripts/
         SystemForAutolaunch="SNES"
 }
+cotm(){
+        BaseRandoDir=$BaseGameDir/$BaseSnesDir/$DQ3RandoDir
+        shift_old_seeds
+        rm seed.txt
+        seed=$RANDOM
+        echo "$seed"> seed.txt 
+        cp $COTMRomPath $BaseRandoDir/current/$seed.gba
+        files=($BaseRandoDir/current/*.gba)
+        cd $RandomizerBasedir/cotm-randomizer/Program/
+        rando "${files[0]}"
+        cd /media/fat/Scripts
+        SystemForAutolaunch="GBA"
+}
 call_menu(){
 
         items=(solarjetman "Solar Jetman NES (akerasi)"
@@ -265,7 +280,8 @@ call_menu(){
                yoshi "Yoshi's Island SNES (Archipelago)"
                yugioh06 "YuGiOh Ultimate Masters 2006 GBA (Archipelago)"
                zillion "Zillion SMS (Archipelago)"
-               dq3 "Dragon's Quest 3 Super Famicom (cleartonic)")
+               dq3 "Dragon's Quest 3 Super Famicom (cleartonic)"
+               cotm "Circle of the Moon (calm-palm)")
 
         choice=$(dialog --title "TapToRandomize Launcher" \
                          --menu "Select a randomizer to launch" 50 90 999 "${items[@]}" \
@@ -291,6 +307,7 @@ call_menu(){
                 yugioh06) yugioh06 ;;
                 zillion) zillion ;;
                 dq3) dq3 ;;
+                cotm) cotm ;;
                 *) clear
                 exit 0 ;;
         esac
@@ -319,6 +336,7 @@ case $1 in
         yugioh06) yugioh06 ;;
         zillion) zillion ;;
         dq3) dq3 ;;
+        cotm) cotm ;;
         *) call_menu ;;
         #No valid argument entered, start up the menu if we can
 esac

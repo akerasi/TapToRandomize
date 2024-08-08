@@ -54,11 +54,15 @@ zillion (SMS Zillion)
 
 dq3 (SNES Dragon Quest 3 Heavenly Flight (works with English patch or JP rom))
 
+cotm (GBA Castlevania Circle of the Moon (calm-palm, preliminary, only default options))
+
 Version: 0.1.5
 Author: akerasi (Allen Tipper)
 
 CHANGELOG:
-0.1.5 Added Qragon Quest 3 Heavenly Flight https://github.com/cleartonic/dq3hf
+0.1.6: Added Circle of the Moon https://github.com/calm-palm/cotm-randomizer/
+
+0.1.5: Added Dragon Quest 3 Heavenly Flight https://github.com/cleartonic/dq3hf
 
 0.1.4: Added autolaunch support, making cardlines easier to write, and added a working menu system for those without TapTo. Now works fine when launched from the MiSTer Scripts menu, and launches the rom when done building.
 
@@ -81,5 +85,7 @@ The BIG List of Video Game Randomizers, https://randomizers.debigare.com/ , from
 Niamek, for the original version of the Solar Jetman randomizer which I've forked and continued at https://github.com/akerasi/SJ-rando
 
 cleartonic for the Dragon Quest 3 Heavenly Flight randomizer https://github.com/cleartonic/dq3hf
+
+calm-palm for the Castlevania Cirlce of the Moon randomizer https://github.com/calm-palm/cotm-randomizer/
 
 And last but not least, the MiSTer FPGA project: https://github.com/MiSTer-devel/Wiki_MiSTer/wiki
