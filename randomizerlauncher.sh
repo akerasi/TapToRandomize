@@ -46,6 +46,8 @@ SMW2RandoDir=YIRando
 SMW2PlayerDir=yoshi
 YGORandoDir=YGORando
 YGOPlayerDir=yugioh
+DQ3RandoDir=DQ3Rando
+DQ3RomPath='/media/fat/cifs/games/SNES/randoroms/dq3.smc'
 ZillionRandoDir=ZillionRando
 ZillionPlayerDir=zillion
 SystemForAutolaunch=none
@@ -230,6 +232,13 @@ zillion(){
         archipelago_generate 
         SystemForAutolaunch="SMS"
 }
+dq3(){
+        BaseRandoDir=$BaseGameDir/$BaseSnesDir/$DQ3RandoDir
+        shift_old_seeds
+        mkdir -p $RandomizerBasedir/dq3hf/dev/
+        echo "$DQ3RomPath" > $RandomizerBasedir/dq3hf/dev/path.txt
+        python $RandomizerBasedir/dq3hf/randomizer.py
+}
 call_menu(){
 
         items=(solarjetman "Solar Jetman NES (akerasi)"
@@ -247,7 +256,8 @@ call_menu(){
                smz3 "Super Metroid/A Link to the Past Combo SNES (Archipelago)"
                yoshi "Yoshi's Island SNES (Archipelago)"
                yugioh06 "YuGiOh Ultimate Masters 2006 GBA (Archipelago)"
-               zillion "Zillion SMS (Archipelago)")
+               zillion "Zillion SMS (Archipelago)"
+               dq3 "Dragon's Quest 3 Super Famicom (cleartonic)")
 
         choice=$(dialog --title "TapToRandomize Launcher" \
                          --menu "Select a randomizer to launch" 50 90 999 "${items[@]}" \
@@ -272,6 +282,7 @@ call_menu(){
                 yoshi) yoshi ;;  
                 yugioh06) yugioh06 ;;
                 zillion) zillion ;;
+                dq3) dq3 ;;
                 *) clear
                 exit 0 ;;
         esac
@@ -299,6 +310,7 @@ case $1 in
         yoshi) yoshi ;;  
         yugioh06) yugioh06 ;;
         zillion) zillion ;;
+        dq3) dq3
         *) call_menu ;;
         #No valid argument entered, start up the menu if we can
 esac
