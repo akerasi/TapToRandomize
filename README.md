@@ -52,10 +52,14 @@ yugioh06 (GBA Yu Gi Oh Ultimate Master 2006)
 
 zillion (SMS Zillion)
 
-Version: 0.1.3
+dq3 (SNES Dragon Quest 3 Heavenly Flight (works with English patch or JP rom))
+
+Version: 0.1.5
 Author: akerasi (Allen Tipper)
 
 CHANGELOG:
+0.1.5 Added Qragon Quest 3 Heavenly Flight https://github.com/cleartonic/dq3hf
+
 0.1.4: Added autolaunch support, making cardlines easier to write, and added a working menu system for those without TapTo. Now works fine when launched from the MiSTer Scripts menu, and launches the rom when done building.
 
 0.1.3: Added Zillion support, refactored directory structure so everything lives under one directory, randomizers, other than the main script and its two ini files.
