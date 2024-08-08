@@ -241,7 +241,8 @@ dq3(){
         cd $RandomizerBasedir/dq3hf
         python $RandomizerBasedir/dq3hf/randomizer.py
         cp $DQ3RomPath $BaseRandoDir/current/$RANDOM.sfc
-        $RandomizerBasedir/dq3hf/asar/asar --fix-checksum=off --no-title-check "$RandomizerBasedir/dq3hf/asar/patch.asm" "$BaseRandoDir/current/*.sfc"
+        files=($BaseRandoDir/current/*.sfc)
+        $RandomizerBasedir/dq3hf/asar/asar --fix-checksum=off --no-title-check "$RandomizerBasedir/dq3hf/asar/patch.asm" "${files[0]}"
         rm $RandomizerBasedir/dq3hf/asar/patch_r.asm
         cd /media/fat/Scripts/
         SystemForAutolaunch="SNES"
