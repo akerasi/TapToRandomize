@@ -243,7 +243,7 @@ dq3(){
         $RandomizerBasedir/dq3hf/asar/asar --fix-checksum=off --no-title-check "$RandomizerBasedir/dq3hf/asar/patch.asm" "$BaseRandoDir/current/*.sfc"
         rm $RandomizerBasedir/dq3hf/asar/patch_r.asm
         cd /media/fat/Scripts/
-        SystemForAutoLaunch="SNES"
+        SystemForAutolaunch="SNES"
 }
 call_menu(){
 
