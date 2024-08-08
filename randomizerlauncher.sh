@@ -48,6 +48,7 @@ YGORandoDir=YGORando
 YGOPlayerDir=yugioh
 ZillionRandoDir=ZillionRando
 ZillionPlayerDir=zillion
+SystemForAutolaunch=none
 KeepSeeds=5
 
 #Handle ini file if it exists
@@ -80,136 +81,230 @@ archipelago_generate(){
         cp $TmpDir/AP*$ArchipelagoFileEnding $BaseRandoDir/current
         rm -Rf $TmpDir/*
 }
-case $1 in
-        solarjetman)
-                BaseRandoDir=$BaseGameDir/$BaseNesDir/$SolarJetmanRandoDir
-                shift_old_seeds
-                if [ ! -e .venvsj/bin/activate ]; then
-                    python -m venv .venvsj
-                fi
-                source .venvsj/bin/activate
-                pip install sj-rando
-                sj-rando -i -p --mode normal --rompath "${SolarJetmanRom}"
-                deactivate
-                mv *.nes "$BaseRandoDir/current"
-        ;;
-        alttp)
-                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$ALTTPRandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$ALTTPPlayerDir
-                ArchipelagoFileEnding='.sfc'
-                archipelago_generate 
-        ;;
-        dkc3)
-                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$DKC3RandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$DKC3PlayerDir
-                ArchipelagoFileEnding='.sfc'
-                archipelago_generate 
-        ;;
-        cv64)
-                BaseRandoDir=$BaseGameDir/$BaseN64Dir/$CV64RandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$CV64PlayerDir
-                ArchipelagoFileEnding='.z64'
-                archipelago_generate 
-        ;;
-        kdl3)
-                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$KDL3RandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$KDL3PlayerDir
-                ArchipelagoFileEnding='.sfc'
-                archipelago_generate 
-        ;;
-        loz)
-                BaseRandoDir=$BaseGameDir/$BaseNesDir/$LOZRandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$LOZPlayerDir
-                ArchipelagoFileEnding='.nes'
-                archipelago_generate 
-        ;;
-        l2)
-                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$L2RandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$L2PlayerDir
-                ArchipelagoFileEnding='.sfc'
-                archipelago_generate 
-        ;;
-        mmbn3)
-                BaseRandoDir=$BaseGameDir/$BaseGBADir/$MMBN3RandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$MMBN3PlayerDir
-                ArchipelagoFileEnding='.gba'
-                archipelago_generate 
-        ;;
+solarjetman(){
+        BaseRandoDir=$BaseGameDir/$BaseNesDir/$SolarJetmanRandoDir
+        shift_old_seeds
+        if [ ! -e .venvsj/bin/activate ]; then
+            python -m venv .venvsj
+        fi
+        source .venvsj/bin/activate
+        pip install sj-rando
+        sj-rando -i -p --mode normal --rompath "${SolarJetmanRom}"
+        deactivate
+        mv *.nes "$BaseRandoDir/current"
+        SystemForAutolaunch="NES"
+}
+alttp(){
+        BaseRandoDir=$BaseGameDir/$BaseSnesDir/$ALTTPRandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$ALTTPPlayerDir
+        ArchipelagoFileEnding='.sfc'
+        archipelago_generate 
+        SystemForAutolaunch="SNES"
+}
+dkc3(){
+        BaseRandoDir=$BaseGameDir/$BaseSnesDir/$DKC3RandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$DKC3PlayerDir
+        ArchipelagoFileEnding='.sfc'
+        archipelago_generate 
+        SystemForAutolaunch="SNES"
+}
+cv64(){
+        BaseRandoDir=$BaseGameDir/$BaseN64Dir/$CV64RandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$CV64PlayerDir
+        ArchipelagoFileEnding='.z64'
+        archipelago_generate 
+        SystemForAutolaunch="N64"
+}
+kdl3(){
+        BaseRandoDir=$BaseGameDir/$BaseSnesDir/$KDL3RandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$KDL3PlayerDir
+        ArchipelagoFileEnding='.sfc'
+        archipelago_generate 
+        SystemForAutolaunch="SNES"
+}
+loz(){
+        BaseRandoDir=$BaseGameDir/$BaseNesDir/$LOZRandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$LOZPlayerDir
+        ArchipelagoFileEnding='.nes'
+        archipelago_generate 
+        SystemForAutolaunch="NES"
+}
+l2(){
+        BaseRandoDir=$BaseGameDir/$BaseSnesDir/$L2RandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$L2PlayerDir
+        ArchipelagoFileEnding='.sfc'
+        archipelago_generate 
+        SystemForAutolaunch="SNES"
+}
+mmbn3(){
+        BaseRandoDir=$BaseGameDir/$BaseGBADir/$MMBN3RandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$MMBN3PlayerDir
+        ArchipelagoFileEnding='.gba'
+        archipelago_generate 
+        SystemForAutolaunch="GBA"
+}
+oot(){
+        BaseRandoDir=$BaseGameDir/$BaseN64Dir/$OOTRandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$OOTPlayerDir
+        ArchipelagoFileEnding='.z64'
+        archipelago_generate
+        SystemForAutolaunch="N64"
+}
+pokee(){
+        BaseRandoDir=$BaseGameDir/$BaseGBADir/$PokeERandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$PokeEPlayerDir
+        ArchipelagoFileEnding='.gba'
+        archipelago_generate 
+        SystemForAutolaunch="GBA"
+}
+pokerb(){
+        BaseRandoDir=$BaseGameDir/$BaseGameboyDir/$PokeRBRandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$PokeRBPlayerDir
+        ArchipelagoFileEnding='.gb'
+        archipelago_generate 
+        SystemForAutolaunch="GAMEBOY"
+}
+smw(){
+        BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMWRandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$SMWPlayerDir
+        ArchipelagoFileEnding='.sfc'
+        archipelago_generate 
+        SystemForAutolaunch="SNES"
+}
+smz3(){
+        BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMZ3RandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$SMZ3PlayerDir
+        ArchipelagoFileEnding='.sfc'
+        archipelago_generate 
+        SystemForAutolaunch="SNES"
+}
+soe(){
+        BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SOERandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$SOEPlayerDir
+        ArchipelagoFileEnding='.sfc'
+        archipelago_generate 
+        SystemForAutolaunch="SNES"
+}
+sm(){
+        BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMRandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$SMPlayerDir
+        ArchipelagoFileEnding='.sfc'
+        archipelago_generate 
+         SystemForAutolaunch="SNES"
+}
+yoshi(){
+        BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMW2RandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$SMW2PlayerDir
+        ArchipelagoFileEnding='.sfc'
+        archipelago_generate 
+        SystemForAutolaunch="SNES"
+}
+yugioh06(){
+        BaseRandoDir=$BaseGameDir/$BaseGBADir/$YGORandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$YGOPlayerDir
+        ArchipelagoFileEnding='.gba'
+        archipelago_generate 
+        SystemForAutolaunch="GBA"
+}
+zillion(){
+        BaseRandoDir=$BaseGameDir/$BaseSMSDir/$ZillionRandoDir
+        shift_old_seeds
+        ArchipelagoPlayerDir=$BaseYamlDir/$ZillionPlayerDir
+        ArchipelagoFileEnding='.sms'
+        archipelago_generate 
+        SystemForAutolaunch="SMS"
+}
+call_menu(){
+
+        items=(solarjetman "Solar Jetman NES (akerasi)"
+               alttp "A Link to the Past SNES (Archipelago)"
+               dkc3 "Donkey Kong Country 3 SNES (Archipelago)"
+               cv64 "Castlevania 64 (Archipelago)"
+               kdl3 "Kirby's Dream Land 3 (Archipelago)"
+               loz "The Legend of Zelda NES (Archipelago)"
+               l2 "Lufia 2 Ancient Caves SNES (Archipelago)"
+               mmbn3 "Mega Man Battle Network 3 GBA (Archipelago)"
+               pokerb "Pokemon Red/Blue GB (Archipelago)"
+               sm "Super Metroid SNES (Archipelago)"
+               smw "Super Mario World SNES (Archipelago)"
+               soe "Secret of Evermore SNES (Archipelago)"
+               smz3 "Super Metroid/A Link to the Past Combo SNES (Archipelago)"
+               yoshi "Yoshi's Island SNES (Archipelago)"
+               yugioh06 "YuGiOh Ultimate Masters 2006 GBA (Archipelago)"
+               zillion "Zillion SMS (Archipelago)")
+
+        choice=$(dialog --title "TapToRandomize Launcher" \
+                         --menu "Select a randomizer to launch" 50 90 999 "${items[@]}" \
+                         2>&1 >/dev/tty2)
+        case $choice in
+                solarjetman) solarjetman ;; 
+                alttp) alttp ;; 
+                dkc3) dkc3 ;;
+                cv64) cv64 ;;
+                kdl3) kdl3 ;;
+                loz) loz ;;     
+                l2) l2 ;;
+                mmbn3) mmbn3 ;;
 #        Commented out as it doesn't currently run on MiSTer; left for future fix
-#        oot)
-#                BaseRandoDir=$BaseGameDir/$BaseN64Dir/$OOTRandoDir
-#                shift_old_seeds
-#                ArchipelagoPlayerDir=$BaseYamlDir/$OOTPlayerDir
-#                ArchipelagoFileEnding='.z64'
-#                archipelago_generate 
-#        ;;
-#        pokee)
-#                BaseRandoDir=$BaseGameDir/$BaseGBADir/$PokeERandoDir
-#                shift_old_seeds
-#                ArchipelagoPlayerDir=$BaseYamlDir/$PokeEPlayerDir
-#                ArchipelagoFileEnding='.gba'
-#                archipelago_generate 
-#        ;;
-        pokerb)
-                BaseRandoDir=$BaseGameDir/$BaseGameboyDir/$PokeRBRandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$PokeRBPlayerDir
-                ArchipelagoFileEnding='.gb'
-                archipelago_generate 
-        ;;    
-        smw)
-                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMWRandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$SMWPlayerDir
-                ArchipelagoFileEnding='.sfc'
-                archipelago_generate 
-        ;;
-        smz3)
-                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMZ3RandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$SMZ3PlayerDir
-                ArchipelagoFileEnding='.sfc'
-                archipelago_generate 
-        ;;
-        soe)
-                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SOERandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$SOEPlayerDir
-                ArchipelagoFileEnding='.sfc'
-                archipelago_generate 
-        ;;
-        sm)
-                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMRandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$SMPlayerDir
-                ArchipelagoFileEnding='.sfc'
-                archipelago_generate 
-        ;;
-        yoshi)
-                BaseRandoDir=$BaseGameDir/$BaseSnesDir/$SMW2RandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$SMW2PlayerDir
-                ArchipelagoFileEnding='.sfc'
-                archipelago_generate 
-        ;;  
-        yugioh06)
-                BaseRandoDir=$BaseGameDir/$BaseGBADir/$YGORandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$YGOPlayerDir
-                ArchipelagoFileEnding='.gba'
-                archipelago_generate 
-        ;;
-        zillion)
-                BaseRandoDir=$BaseGameDir/$BaseSMSDir/$ZillionRandoDir
-                shift_old_seeds
-                ArchipelagoPlayerDir=$BaseYamlDir/$ZillionPlayerDir
-                ArchipelagoFileEnding='.sms'
-                archipelago_generate                      
+#                oot) oot ;;
+#                pokee) pokee ;;
+                pokerb) pokerb ;;    
+                smw) smw ;;
+                smz3) smz3 ;;
+                soe) soe ;;
+                sm) sm ;;
+                yoshi) yoshi ;;  
+                yugioh06) yugioh06 ;;
+                zillion) zillion ;;
+                *) clear
+                exit 0 ;;
+        esac
+        autoload=1
+        clear # clear after user pressed Cancel
+        
+}
+case $1 in
+        solarjetman) solarjetman ;;
+        alttp) alttp ;;
+        dkc3) dkc3 ;;
+        cv64) cv64 ;;
+        kdl3) kdl3 ;;
+        loz) loz ;;
+        l2) l2 ;;
+        mmbn3) mmbn3 ;;
+#        Commented out as it doesn't currently run on MiSTer; left for future fix
+#        oot) oot ;;
+#        pokee) pokee ;;
+        pokerb) pokerb ;;    
+        smw) smw ;;
+        smz3) smz3 ;;
+        soe) soe ;;
+        sm) sm ;;
+        yoshi) yoshi ;;  
+        yugioh06) yugioh06 ;;
+        zillion) zillion ;;
+        *) call_menu ;;
+        #No valid argument entered, start up the menu if we can
 esac
+if [ "$2" == "autoload" ]; then
+        autoload=1
+fi
+if [ $autoload ]; then
+        $RandomizerBasedir/mbc load_rom $SystemForAutolaunch $BaseRandoDir/current/*
+fi

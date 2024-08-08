@@ -2,7 +2,7 @@ TapToRandomize is a simple script to automize randomizer usage on MiSTerFPGA, be
 
 Usage: randomizerlauncher.sh randomizername
 
-In TapTo, make a card with **mister.script:randomizerlauncher.sh randomizername||**launch.random:/media/fat/path/to/platform/RandoDir
+In TapTo, make a card with **mister.script:randomizerlauncher.sh randomizername autolaunch?hidden=true||
 
 Upon tapping that card, after a wait (note some waits can be sizeable, SMZ3 can take up to 4 minutes to launch!) your randomized ROM will start up. You get a freshly randomized ROM any time you tap the card; to save a session for later, open the ROM in the RandoDir/current directory via the normal MiSTerFPGA menus, or make a card with just the launch command above to launch whatever your current seed is without making a new one.
 
@@ -56,6 +56,8 @@ Version: 0.1.3
 Author: akerasi (Allen Tipper)
 
 CHANGELOG:
+0.1.4: Added autolaunch support, making cardlines easier to write, and added a working menu system for those without TapTo. Now works fine when launched from the MiSTer Scripts menu, and launches the rom when done building.
+
 0.1.3: Added Zillion support, refactored directory structure so everything lives under one directory, randomizers, other than the main script and its two ini files.
 
 0.1.2: Added YAML rewriter to handle Archipelago config YAMLs in a saner manner.
