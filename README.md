@@ -80,4 +80,6 @@ The BIG List of Video Game Randomizers, https://randomizers.debigare.com/ , from
 
 Niamek, for the original version of the Solar Jetman randomizer which I've forked and continued at https://github.com/akerasi/SJ-rando
 
+cleartonic for the Dragon Quest 3 Heavenly Flight randomizer https://github.com/cleartonic/dq3hf
+
 And last but not least, the MiSTer FPGA project: https://github.com/MiSTer-devel/Wiki_MiSTer/wiki
