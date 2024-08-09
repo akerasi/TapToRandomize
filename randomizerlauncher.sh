@@ -13,6 +13,13 @@ TmpDir=$RandomizerBasedir/taptorandomizetmp
 ArchipelagoDir=$RandomizerBasedir/archipelago-0.5.0-MiSTerFPGA
 SolarJetmanRandoDir=SolarJetmanRando
 SolarJetmanRom='/media/fat/cifs/games/NES/randoroms/Solar Jetman - Hunt for the Golden Warpship (USA).nes'
+SolarJetmanRandomizeAstronaut=0
+SolarJetmanRandomizePod=0
+SolarJetmanRandomizeItems=1
+SolarJetmanRandomizeItemsWithLogic=0
+SolarJetmanLateral=0
+SolarJetmanSeed=-1
+SolarJetmanMode=normal
 ALTTPRandoDir=ALTTPRando
 ALTTPPlayerDir=alttp
 DKC3RandoDir=DKC3Rando
@@ -117,6 +124,29 @@ cotm_options(){
         echo -e "noMPDrain $COTMnoMPDrain \nallBossesRequired $COTMallBossesRequired \ndssRunSpeed $COTMdssRunSpeed " >> options.txt
         echo -n -e "skipCutscenes $COTMskipCutscenes \nskipMagicItemTutorials $COTMskipMagicItemTutorials " >> options.txt
 }
+build_options_flags_sj(){
+        SJOptionsString=""
+        if [ $SolarJetmanRandomizeAstronaut ]; then
+                SJOptionsString="-a $SJOptionsString"
+        fi
+        if [ $SolarJetmanRandomizePod ]; then
+                SJOptionsString="-r $SJOptionsString"
+        fi
+        if [ $SolarJetmanRandomizeItems ]; then
+                SJOptionsString="-i $SJOptionsString"
+        elif [ $SolarJetmanRandomizeItemsWithLogic ]; then
+                SJOptionsString="-I $SJOptionsString"
+        fi
+        if [ $SolarJetmanLateral ]; then
+                SJOptionsString="-l $SJOptionsString"
+        fi
+        if [ $SolarJetmanSeed ]; then
+                SJOptionsString="--seed $SolarJetmanSeed $SJOptionsString"
+        fi
+        if [ "$SolarJetmanMode" == "normal" -o $SolarJetmanMode == "reckless" -o $SolarJetmanMode == "goldhunt" ] ; then
+                SJOptionsString="--mode $SolarJetmanMode $SJOptionsString"
+        fi
+}
 solarjetman(){
         BaseRandoDir=$BaseGameDir/$BaseNesDir/$SolarJetmanRandoDir
         shift_old_seeds
@@ -125,7 +155,8 @@ solarjetman(){
         fi
         source .venvsj/bin/activate
         pip install sj-rando
-        sj-rando -i -p --mode normal --rompath "${SolarJetmanRom}"
+        build_options_flags_sj
+        sj-rando $SJOptionsString --rompath "${SolarJetmanRom}"
         deactivate
         mv *.nes "$BaseRandoDir/current"
         SystemForAutolaunch="NES"
