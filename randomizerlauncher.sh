@@ -17,6 +17,7 @@ SolarJetmanRandomizeAstronaut=0
 SolarJetmanRandomizePod=0
 SolarJetmanRandomizeItems=1
 SolarJetmanRandomizeItemsWithLogic=0
+olarJetmanRandomizePallette=1
 SolarJetmanLateral=0
 SolarJetmanSeed=-1
 SolarJetmanMode=normal
@@ -140,12 +141,16 @@ build_options_flags_sj(){
         if [ "$SolarJetmanLateral" == "1" ]; then
                 SJOptionsString="-l $SJOptionsString"
         fi
+        if [ "$SolarJetmanRandomizePallette" == "1" ]; then
+                SJOptionsString="-p $SJOptionsString"
+        fi
         if [ "$SolarJetmanSeed" -gt 0 ]; then
                 SJOptionsString="--seed $SolarJetmanSeed $SJOptionsString"
         fi
         if [ "$SolarJetmanMode" == "normal" -o $SolarJetmanMode == "reckless" -o $SolarJetmanMode == "goldhunt" ] ; then
                 SJOptionsString="--mode $SolarJetmanMode $SJOptionsString"
         fi
+        echo "$SJOptionsString"
 }
 solarjetman(){
         BaseRandoDir=$BaseGameDir/$BaseNesDir/$SolarJetmanRandoDir
