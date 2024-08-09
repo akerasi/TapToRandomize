@@ -126,21 +126,21 @@ cotm_options(){
 }
 build_options_flags_sj(){
         SJOptionsString=""
-        if [ $SolarJetmanRandomizeAstronaut ]; then
+        if [ "$SolarJetmanRandomizeAstronaut" == "1" ]; then
                 SJOptionsString="-a $SJOptionsString"
         fi
-        if [ $SolarJetmanRandomizePod ]; then
+        if [ "$SolarJetmanRandomizePod" == "1" ]; then
                 SJOptionsString="-r $SJOptionsString"
         fi
-        if [ $SolarJetmanRandomizeItems ]; then
+        if [ "$SolarJetmanRandomizeItems" == "1" ]; then
                 SJOptionsString="-i $SJOptionsString"
-        elif [ $SolarJetmanRandomizeItemsWithLogic ]; then
+        elif [ "$SolarJetmanRandomizeItemsWithLogic" == "1" ]; then
                 SJOptionsString="-I $SJOptionsString"
         fi
-        if [ $SolarJetmanLateral ]; then
+        if [ "$SolarJetmanLateral" == "1" ]; then
                 SJOptionsString="-l $SJOptionsString"
         fi
-        if [ $SolarJetmanSeed ]; then
+        if [ "$SolarJetmanSeed" -gt 0 ]; then
                 SJOptionsString="--seed $SolarJetmanSeed $SJOptionsString"
         fi
         if [ "$SolarJetmanMode" == "normal" -o $SolarJetmanMode == "reckless" -o $SolarJetmanMode == "goldhunt" ] ; then
