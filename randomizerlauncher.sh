@@ -52,6 +52,26 @@ ZillionRandoDir=ZillionRando
 ZillionPlayerDir=zillion
 COTMRandoDir=COTMRando
 COTMRomPath='/media/fat/cifs/games/GBA/randoroms/cotm.gba'
+COTMignoreCleansing=0 
+COTMapplyAutoRunPatch=0 
+COTMapplyNoDSSGlitchPatch=0 
+COTMapplyAllowSpeedDash=0 
+COTMbreakIronMaidens=0 
+COTMlastKeyRequired=0 
+COTMlastKeyAvailable=0 
+COTMapplyBuffFamiliars=0 
+COTMapplyBuffSubweapons=0 
+COTMapplyShooterStrength=0 
+COTMdoNotRandomizeItems=0 
+COTMRandomItemHardMode=0 
+COTMhalveDSSCards=0 
+COTMcountdown=0 
+COTMsubweaponShuffle=0 
+COTMnoMPDrain=0 
+COTMallBossesRequired=0 
+COTMdssRunSpeed=1 
+COTMskipCutscenes=0 
+COTMskipMagicItemTutorials=0 
 SystemForAutolaunch=none
 KeepSeeds=5
 
@@ -85,6 +105,17 @@ archipelago_generate(){
         $ArchipelagoDir/ArchipelagoPatch $TmpDir/AP_*P1*.ap*
         cp $TmpDir/AP*$ArchipelagoFileEnding $BaseRandoDir/current
         rm -Rf $TmpDir/*
+}
+cotm_options(){
+        echo -e "ignoreCleansing $COTMignoreCleansing \napplyAutoRunPatch $COTMapplyAutoRunPatch " > "options.txt"
+        echo -e "applyNoDSSGlitchPatch $COTMapplyNoDSSGlitchPatch \napplyAllowSpeedDash $COTMapplyAllowSpeedDash " >> options.txt
+        echo -e "breakIronMaidens $COTMbreakIronMaidens \nlastKeyRequired $COTMlastKeyRequired " >> options.txt
+        echo -e "lastKeyAvailable $COTMlastKeyAvailable \napplyBuffFamiliars $COTMapplyBuffFamiliars " >> options.txt
+        echo -e "applyBuffSubweapons $COTMapplyBuffSubweapons \napplyShooterStrength $COTMapplyShooterStrength " >> options.txt
+        echo -e "doNotRandomizeItems $COTMdoNotRandomizeItems \nRandomItemHardMode $COTMRandomItemHardMode " >> options.txt
+        echo -e "halveDSSCards $COTMhalveDSSCards \ncountdown $COTMcountdown \nsubweaponShuffle $COTMsubweaponShuffle " >> options.txt
+        echo -e "noMPDrain $COTMnoMPDrain \nallBossesRequired $COTMallBossesRequired \ndssRunSpeed $COTMdssRunSpeed " >> options.txt
+        echo -n -e "skipCutscenes $COTMskipCutscenes \nskipMagicItemTutorials $COTMskipMagicItemTutorials " >> options.txt
 }
 solarjetman(){
         BaseRandoDir=$BaseGameDir/$BaseNesDir/$SolarJetmanRandoDir
@@ -250,15 +281,16 @@ dq3(){
         SystemForAutolaunch="SNES"
 }
 cotm(){
-        BaseRandoDir=$BaseGameDir/$BaseSnesDir/$DQ3RandoDir
+        BaseRandoDir=$BaseGameDir/$BaseGBADir/$COTMRandoDir
         shift_old_seeds
-        rm seed.txt
         seed=$RANDOM
-        echo "$seed"> seed.txt 
         cp $COTMRomPath $BaseRandoDir/current/$seed.gba
         files=($BaseRandoDir/current/*.gba)
         cd $RandomizerBasedir/cotm-randomizer/Program/
-        rando "${files[0]}"
+        rm seed.txt
+        echo "$seed"> seed.txt 
+        cotm_options
+        rando "${files[0]}" headless
         cd /media/fat/Scripts
         SystemForAutolaunch="GBA"
 }
